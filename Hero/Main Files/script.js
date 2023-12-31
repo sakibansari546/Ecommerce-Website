@@ -1,26 +1,38 @@
-const bar = document.getElementById("bar");
-const closeBar = document.getElementById("close-bar");
-const nav = document.getElementById("navbar");
+menuFUnction()
+function menuFUnction() {
 
-if (bar) {
-    bar.addEventListener('click', () => {
-        nav.classList.add('active');
-    })
+    let bar = document.getElementById("bar");
+    let closeBar = document.getElementById("close-bar");
+    const nav = document.getElementById("navbar");
+
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active');
+        })
+    }
+
+    if (closeBar) {
+        closeBar.addEventListener('click', () => {
+            nav.classList.remove('active');
+            console.log("Clicked");
+        })
+    }
 }
 
-if (closeBar) {
-    closeBar.addEventListener('click', () => {
-        nav.classList.remove('active');
-        console.log("Clicked");
-    })
-}
 
 
+let bagItems;
 
+let bagItemObject;
 onload();
+
 function onload() {
+    let bagItemSrt = localStorage.getItem('bagItems');
+    bagItems = bagItemSrt ? JSON.parse(bagItemSrt) : [];
     displayAllproductsInPage();
     singleProductPage(getProductIdFromURL());
+    changeBagItem();
+
 }
 
 function getProductIdFromURL() {
@@ -104,7 +116,7 @@ function singleProductPage(productId) {
                 </select>
                 <div class="pro-buttons">
                     <input type="number" value="1">
-                    <button onclick="changeBagItem(${pro.id})">Add to Cart</button>
+                    <button onclick="addBagItem(${pro.id})">Add to Cart</button>
                 </div>
                 <h4>Product Details</h4>
                 <span>The Gilden Ultra Cotton T-Shirt is made from a substanial 6.0 oz. per sq. yd. fabric contracted
@@ -136,12 +148,103 @@ function smallImageDisplay(clickedImg) {
 }
 
 
-let bagItem = [];
-let bagItemCount = 0;
-function changeBagItem(proId) {
-    bagItemCount++;
-    console.log(proId, bagItemCount);
 
-    let bagItemCountEl = document.querySelector('.cart-count');
-    bagItemCountEl.innerHTML = bagItemCount;
+function addBagItem(proId) {
+    bagItems.push(proId);
+    localStorage.setItem('bagItems', JSON.stringify(bagItems));
+    changeBagItem();
+}
+
+function changeBagItem() {
+    let bagItemCountEl = document.querySelectorAll('.cart-count');
+    bagItemCountEl.forEach((bag) => {
+        if (bagItems.length <= 0) {
+            bag.style.opacity = '0';
+        } else {
+            bag.style.opacity = '1';
+            bag.innerHTML = bagItems.length;
+        }
+    })
+}
+
+
+
+
+
+displayBagItems();
+loadBagItemsObj();
+
+function loadBagItemsObj() {
+    bagItemObject = bagItems.map(itemId => {
+        // Find the product with the corresponding ID
+        const product = products.find(item => item.id == itemId);
+        return product;
+    });
+
+    console.log(bagItemObject);
+}
+
+
+// function displayBagItems() {
+
+//     let itemConatinerEl = document.querySelector('.bagItemConatiner');
+//     let innerHTML = '';
+
+//     itemConatinerEl.innerHTML = `
+//             <div class="col-md-8 cart">
+//                     <div class="title">
+//                         <div class="row">
+//                             <div class="col">
+//                                 <h4><b>Shopping Cart</b></h4>
+//                             </div>
+//                             <div class="col align-self-center text-right text-muted">3 items</div>
+//                         </div>
+//                     </div>
+//                     <div class="row border-top border-bottom">
+//                         <div class="row main align-items-center">
+//                             <div class="col-2"><img class="img-fluid" src="/Hero/images/f1.jpg"></div>
+//                             <div class="col">
+//                                 <div class="row text-muted">Shirt</div>
+//                                 <div class="row">Cotton T-shirt</div>
+//                             </div>
+//                             <div class="col">
+//                                 <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+//                             </div>
+//                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
+//                         </div>
+//                     </div>
+//                     <div class="row">
+//                         <div class="row main align-items-center">
+//                             <div class="col-2"><img class="img-fluid" src="/Hero/images/f3.jpg"></div>
+//                             <div class="col">
+//                                 <div class="row text-muted">Shirt</div>
+//                                 <div class="row">Cotton T-shirt</div>
+//                             </div>
+//                             <div class="col">
+//                                 <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+//                             </div>
+//                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
+//                         </div>
+//                     </div>
+//                     <div class="row border-top border-bottom">
+//                         <div class="row main align-items-center">
+//                             <div class="col-2"><img class="img-fluid" src="/Hero/images/f2.jpg"></div>
+//                             <div class="col">
+//                                 <div class="row text-muted">Shirt</div>
+//                                 <div class="row">Cotton T-shirt</div>
+//                             </div>
+//                             <div class="col">
+//                                 <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
+//                             </div>
+//                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
+//                         </div>
+//                     </div>
+//                     <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span>
+//                     </div>
+//                 </div>
+//             `
+// }
+
+function generateItemInHTMl(item) {
+
 }

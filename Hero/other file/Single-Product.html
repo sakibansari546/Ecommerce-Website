@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
     <style>
         .cart-count {
-            color: black;
+            color: rgb(255, 255, 255);
             background: crimson;
             padding: 3px 10px;
             border-radius: 50%;
@@ -21,6 +21,16 @@
             top: -20px;
             left: 0;
 
+        }
+
+        #mobile {
+            position: relative;
+        }
+
+        #mobile .cart-count {
+            position: absolute;
+            top: -20px;
+            left: 0;
         }
     </style>
 </head>
@@ -30,12 +40,12 @@
         <a href="#"><img src="/Hero/images/logo.png" alt=""></a>
         <div>
             <ul id="navbar">
-                <li><a href="/Hero/Main Files/index.html">Home</a></li>
-                <li><a class="active" href="#">Shop</a></li>
+                <li><a class="active" href="/Hero/Main Files/index.html">Home</a></li>
+                <li><a href="#">Shop</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li style="position: relative;"><a href="#">
+                <li style="position: relative;"><a href="/Hero/Main Files/cart/bag.html">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#121331"
                             style="width:25px;height:25px">
@@ -47,12 +57,13 @@
             </ul>
         </div>
         <div id="mobile">
-            <a href="#">
+            <a href="/Hero/Main Files/cart/bag.html">
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#121331"
                     style="width:25px;height:25px">
                 </lord-icon>
             </a>
+            <span class="cart-count">0</span>
             <i id="bar" class="fa-solid fa-bars"></i>
         </div>
     </section>
