@@ -17,14 +17,17 @@ if (closeBar) {
 
 
 
-
-
-
 onload();
 function onload() {
     displayAllproductsInPage();
-    singleProductPage();
+    singleProductPage(getProductIdFromURL());
 }
+
+function getProductIdFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
+
 
 function displayAllproductsInPage() {
     let productContainer = document.querySelector('.pro-container');
@@ -33,7 +36,8 @@ function displayAllproductsInPage() {
         let starHTML = product.ratings.map((rating) => rating).join('');
 
         innerHTML += `
-        <div onclick="singleProductPage(${product.id})" href="/Hero/other file/Single-Product.html" class="pro">
+        <div onclick="window.location.href='/Hero/other file/Single-Product.html?id=${product.id}'" class="pro">
+
                 <img src="${product.image}" alt="">
                 <a href="/Hero/other file/Single-Product.html"></a>
                 
@@ -64,28 +68,29 @@ function displayAllproductsInPage() {
 
 function singleProductPage(productId) {
     let proDetailsContainer = document.querySelector('#pro-details');
+    let innerHTML = ''
     products.forEach((pro) => {
         if (pro.id == productId) {
-            proDetailsContainer.innerHTML = `
+            innerHTML += `
             <div class="single-product-details">
             <div class="single-pro-img">
-                <img src="${pro.image}" id="mainImg">
-
-                <div onclick="smallImageDisplay(this)" class="small-img-group">
-                    <div class="small-img-col">
-                        <img src="/Hero/images/f1.jpg" width="100%" class="small-img" alt="">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="/Hero/images/f3.jpg" width="100%" class="small-img" alt="">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="/Hero/images/f4.jpg" width="100%" class="small-img" alt="">
-                    </div>
-                    <div class="small-img-col">
-                        <img src="/Hero/images/f5.jpg" width="100%" class="small-img" alt="">
-                    </div>
+            <img src="${pro.image}" id="mainImg">
+        
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="/Hero/images/f1.jpg" width="100%" class="small-img" alt="" onclick="smallImageDisplay(this)">
+                </div>
+                <div class="small-img-col">
+                    <img src="/Hero/images/f3.jpg" width="100%" class="small-img" alt="" onclick="smallImageDisplay(this)">
+                </div>
+                <div class="small-img-col">
+                    <img src="/Hero/images/f4.jpg" width="100%" class="small-img" alt="" onclick="smallImageDisplay(this)">
+                </div>
+                <div class="small-img-col">
+                    <img src="/Hero/images/f5.jpg" width="100%" class="small-img" alt="" onclick="smallImageDisplay(this)">
                 </div>
             </div>
+        </div>
             <div class="single-pro-details">
                 <h6>${pro.brand}</h6>
                 <h4>${pro.productName}</h4>
@@ -99,7 +104,7 @@ function singleProductPage(productId) {
                 </select>
                 <div class="pro-buttons">
                     <input type="number" value="1">
-                    <button>Add to Cart</button>
+                    <button onclick="changeBagItem(${pro.id})">Add to Cart</button>
                 </div>
                 <h4>Product Details</h4>
                 <span>The Gilden Ultra Cotton T-Shirt is made from a substanial 6.0 oz. per sq. yd. fabric contracted
@@ -114,10 +119,29 @@ function singleProductPage(productId) {
             `
         }
     });
+    proDetailsContainer.innerHTML = innerHTML
 
 
 
 }
-function smallImageDisplay() {
-    console.log(this);
+
+
+function smallImageDisplay(clickedImg) {
+    // Get the main image element
+    const mainImg = document.getElementById('mainImg');
+
+    // Set the src attribute of the main image to the clicked small image's src
+    mainImg.src = clickedImg.src;
+    clickedImg.src = mainImg.src;
+}
+
+
+let bagItem = [];
+let bagItemCount = 0;
+function changeBagItem(proId) {
+    bagItemCount++;
+    console.log(proId, bagItemCount);
+
+    let bagItemCountEl = document.querySelector('.cart-count');
+    bagItemCountEl.innerHTML = bagItemCount;
 }
