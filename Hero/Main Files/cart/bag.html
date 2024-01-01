@@ -207,29 +207,30 @@
         <div>
             <ul id="navbar">
                 <li><a href="/Hero/Main Files/index.html">Home</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-                <li>
+                <li style="position: relative;">
                     <a class="active" href="/Hero/Main Files/cart/bag.html">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#121331"
                             style="width:25px;height:25px">
                         </lord-icon>
                     </a>
-
+                    <span class="cart-count">0</span>
                 </li>
                 <a href="#"><i class="fa-solid fa-xmark" id="close-bar"></i></a>
             </ul>
         </div>
         <div id="mobile">
-            <a href="#">
+            <a href="/Hero/Main Files/cart/bag.html">
                 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                 <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#121331"
                     style="width:25px;height:25px">
                 </lord-icon>
             </a>
+            <span class="cart-count">0</span>
             <i id="bar" class="fa-solid fa-bars"></i>
         </div>
     </section>
@@ -238,149 +239,42 @@
 
     <div class="cart-containr">
 
+
         <div class="card">
             <div class="row">
-                <div class="bagItemConatiner">
-                    <!-- <div class="col-md-8 cart">
-                        <div class="title">
-                            <div class="row">
-                                <div class="col">
-                                    <h4><b>Shopping Cart</b></h4>
-                                </div>
-                                <div class="col align-self-center text-right text-muted">3 items</div>
-                            </div>
-                        </div>
-                        <div class="row border-top border-bottom">
-                            <div class="row main align-items-center">
-                                <div class="col-2"><img class="img-fluid" src="/Hero/images/f1.jpg"></div>
-                                <div class="col">
-                                    <div class="row text-muted">Shirt</div>
-                                    <div class="row">Cotton T-shirt</div>
-                                </div>
-                                <div class="col">
-                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                                </div>
-                                <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="row main align-items-center">
-                                <div class="col-2"><img class="img-fluid" src="/Hero/images/f3.jpg"></div>
-                                <div class="col">
-                                    <div class="row text-muted">Shirt</div>
-                                    <div class="row">Cotton T-shirt</div>
-                                </div>
-                                <div class="col">
-                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                                </div>
-                                <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                            </div>
-                        </div>
-                        <div class="row border-top border-bottom">
-                            <div class="row main align-items-center">
-                                <div class="col-2"><img class="img-fluid" src="/Hero/images/f2.jpg"></div>
-                                <div class="col">
-                                    <div class="row text-muted">Shirt</div>
-                                    <div class="row">Cotton T-shirt</div>
-                                </div>
-                                <div class="col">
-                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                                </div>
-                                <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                            </div>
-                        </div>
-                        <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to
-                                shop</span>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-md-4 summary">
-                    <div class="bagSummary">
-                        <div>
-                            <h5><b>Summary</b></h5>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col" style="padding-left:0;">ITEMS 3</div>
-                            <div class="col text-right">&euro; 132.00</div>
-                        </div>
-
-                        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                            <div class="col">TOTAL PRICE</div>
-                            <div class="col text-right">&euro; 137.00</div>
-                        </div>
-                        <button class="btn">CHECKOUT</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="/Hero/Main Files/product.js"></script>
-    <script defer src="/Hero/Main Files/script.js"></script>
-
-    <script>
-        displayBagItems()
-        function displayBagItems() {
-            let itemConatinerEl = document.querySelector('.bagItemConatiner');
-            let innerHTML = '';
-
-            itemConatinerEl.innerHTML = `
-            <div class="col-md-8 cart">
+                <div class="col-md-8 cart">
                     <div class="title">
                         <div class="row">
                             <div class="col">
                                 <h4><b>Shopping Cart</b></h4>
                             </div>
-                            <div class="col align-self-center text-right text-muted">3 items</div>
                         </div>
                     </div>
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="/Hero/images/f1.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
+                    <div class="cart-item-container">
+
                     </div>
-                    <div class="row">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="/Hero/images/f3.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
+                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to
+                            shop</span>
                     </div>
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="/Hero/images/f2.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span>
-                    </div>
+
                 </div>
-            `
-        }
-    </script>
+                <div class="summary-container col-md-4 summary">
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <script src="/Hero/Main Files/product.js"></script>
+    <script src="/Hero/Main Files/script.js"></script>
+    <script src="/Hero/Main Files/cart/bag.js"></script>
+
+
 
 
 </body>

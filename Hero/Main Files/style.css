@@ -9,6 +9,30 @@
     text-decoration: none;
 }
 
+
+.cart-count {
+    color: rgb(255, 255, 255);
+    background: crimson;
+    padding: 3px 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: 0;
+
+}
+
+#mobile {
+    position: relative;
+}
+
+#mobile .cart-count {
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+
+
+
 button {
     background: #e91e63;
     color: #ebdede;
@@ -638,6 +662,7 @@ footer a:hover {
 
 #pro-details {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
@@ -647,7 +672,7 @@ footer a:hover {
 }
 
 #pro-details .single-pro-details h4 {
-    padding: 40px 0 20px 0;
+    padding: 20px 0 20px 0;
 }
 
 #pro-details .single-pro-details select {

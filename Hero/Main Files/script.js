@@ -22,9 +22,8 @@ function menuFUnction() {
 
 
 let bagItems;
-
-let bagItemObject;
 onload();
+
 
 function onload() {
     let bagItemSrt = localStorage.getItem('bagItems');
@@ -32,6 +31,8 @@ function onload() {
     displayAllproductsInPage();
     singleProductPage(getProductIdFromURL());
     changeBagItem();
+    displayBagItems();
+    loadBagItemObject();
 
 }
 
@@ -60,7 +61,7 @@ function displayAllproductsInPage() {
                        ${starHTML}
                     </div>
                     <div class="price">
-                        <h4>${product.price}</h4>
+                        <h4>$${product.price}</h4>
                         <a href="#">
                             <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                             <lord-icon src="https://cdn.lordicon.com/hyhnpiza.json" trigger="hover"
@@ -106,7 +107,7 @@ function singleProductPage(productId) {
             <div class="single-pro-details">
                 <h6>${pro.brand}</h6>
                 <h4>${pro.productName}</h4>
-                <h2>$123.00</h2>
+                <h2>$${pro.price}</h2>
                 <select name="" id="">
                     <option value="">Select Size</option>
                     <option value="">XL</option>
@@ -171,80 +172,3 @@ function changeBagItem() {
 
 
 
-displayBagItems();
-loadBagItemsObj();
-
-function loadBagItemsObj() {
-    bagItemObject = bagItems.map(itemId => {
-        // Find the product with the corresponding ID
-        const product = products.find(item => item.id == itemId);
-        return product;
-    });
-
-    console.log(bagItemObject);
-}
-
-
-// function displayBagItems() {
-
-//     let itemConatinerEl = document.querySelector('.bagItemConatiner');
-//     let innerHTML = '';
-
-//     itemConatinerEl.innerHTML = `
-//             <div class="col-md-8 cart">
-//                     <div class="title">
-//                         <div class="row">
-//                             <div class="col">
-//                                 <h4><b>Shopping Cart</b></h4>
-//                             </div>
-//                             <div class="col align-self-center text-right text-muted">3 items</div>
-//                         </div>
-//                     </div>
-//                     <div class="row border-top border-bottom">
-//                         <div class="row main align-items-center">
-//                             <div class="col-2"><img class="img-fluid" src="/Hero/images/f1.jpg"></div>
-//                             <div class="col">
-//                                 <div class="row text-muted">Shirt</div>
-//                                 <div class="row">Cotton T-shirt</div>
-//                             </div>
-//                             <div class="col">
-//                                 <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-//                             </div>
-//                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-//                         </div>
-//                     </div>
-//                     <div class="row">
-//                         <div class="row main align-items-center">
-//                             <div class="col-2"><img class="img-fluid" src="/Hero/images/f3.jpg"></div>
-//                             <div class="col">
-//                                 <div class="row text-muted">Shirt</div>
-//                                 <div class="row">Cotton T-shirt</div>
-//                             </div>
-//                             <div class="col">
-//                                 <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-//                             </div>
-//                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-//                         </div>
-//                     </div>
-//                     <div class="row border-top border-bottom">
-//                         <div class="row main align-items-center">
-//                             <div class="col-2"><img class="img-fluid" src="/Hero/images/f2.jpg"></div>
-//                             <div class="col">
-//                                 <div class="row text-muted">Shirt</div>
-//                                 <div class="row">Cotton T-shirt</div>
-//                             </div>
-//                             <div class="col">
-//                                 <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-//                             </div>
-//                             <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-//                         </div>
-//                     </div>
-//                     <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span>
-//                     </div>
-//                 </div>
-//             `
-// }
-
-function generateItemInHTMl(item) {
-
-}

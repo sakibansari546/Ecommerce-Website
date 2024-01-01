@@ -14,7 +14,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>",
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 2,
@@ -33,7 +34,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>",
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 3,
@@ -52,7 +54,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 4,
@@ -72,7 +75,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 5,
@@ -92,7 +96,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 6,
@@ -112,7 +117,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 7,
@@ -132,7 +138,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 8,
@@ -152,7 +159,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 9,
@@ -172,7 +180,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 10,
@@ -192,7 +201,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 11,
@@ -212,7 +222,8 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     },
     {
         "id": 12,
@@ -232,6 +243,7 @@ const products = [
             "<i class='fas fa-star'></i>",
             "<i class='fas fa-star'></i>"
         ],
-        "price": "$34"
+        "price": 34,
+        'StandardDelivery': 5,
     }
 ];
