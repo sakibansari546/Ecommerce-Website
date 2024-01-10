@@ -123,10 +123,7 @@ function singleProductPage(productId) {
                 <span>The Gilden Ultra Cotton T-Shirt is made from a substanial 6.0 oz. per sq. yd. fabric contracted
                     from
                     100% cotton, this classic fit preshrunk jersey kint provide unmatched comfort with each wear.
-                    Featuring
-                    a taped neck and shoulder, and a seamless double needle collar, and available in a range of colors,
-                    it
-                    offers it all in the ultimate head-turning package.</span>
+                    </span>
             </div>
         </div>
             `
