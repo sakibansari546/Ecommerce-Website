@@ -424,6 +424,7 @@ body {
     height: 50vh;
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
 
 #sm-banner .banner-box:nth-child(2) {
@@ -472,6 +473,10 @@ body {
     padding: 0 80px;
 }
 
+#banner-3 .banner-box:hover {
+    transform: scale(1.1);
+}
+
 #banner-3 .banner-box {
     display: flex;
     flex-direction: column;
@@ -485,6 +490,9 @@ body {
     background-size: cover;
     background-position: center;
     margin-bottom: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 #banner-3 .banner-box:nth-child(2) {
